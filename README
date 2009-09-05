@@ -1,0 +1,15 @@
+The GOAL:
+=========
+
+Create a rotary picker that will have function similar to Apple's own UIPicker with the difference of being open-source and looking good. 
+
+The Source of inspiration:
+==========================
+[![](http://tapbots.com/images/blog/making-of-convertbot/05.jpg)]
+(http://tapbots.com/images/blog/making-of-convertbot/05.jpg)
+[![](http://www.maclife.com/files/u36/0925_WhereTo_320.jpg)]
+(http://www.maclife.com/files/u36/0925_WhereTo_320.jpg)
+
+The path:
+=========
+Still thinking out the design and implementation parts, check out later to see if any progress has been made ;)
