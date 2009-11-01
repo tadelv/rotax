@@ -45,6 +45,10 @@
 
 
 - (void)reloadData {
+	/*
+	 reloads the data for the slices in the wheel
+	 repositions the slices and rotates them accordingly
+	 */
 	for(UIView *subView in _rotatingView.subviews)
 		[subView removeFromSuperview];
 	[_sliceViews removeAllObjects];
@@ -92,6 +96,10 @@
 
 
 - (void)rotateToIndex:(int)index animated:(BOOL)animated{
+	/*
+	 this piece of code rotates the main rotating view
+	 (not the slices) to some index
+	 */
 	if([_sliceViews count] < index || index < 0) {
 		[[NSException exceptionWithName:NSInvalidArgumentException reason:@"index out of bounds" userInfo:nil] raise];
 	}
@@ -115,6 +123,13 @@
 
 //Touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	/*
+	 here we begin tracking the touch
+	 first we check if the touch is made on the right side of the picker
+	 (the see-through glass of the VW van)
+	 then we store the angle in a var, so that we can calculate the rotation later
+	 */
+	
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:_rotatingView];
 	
@@ -134,6 +149,13 @@
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	/*
+	 if touches moved, it means that the user wants to rotate the 
+	 picker wheel manually
+	 simply calculate the angle and rotate the view accordingly,
+	 using the diff angle calculated at the beginning of touches
+	 */
+	
 	//	NSLog(@"touches");	
 	//calculate the angle and all
 	_rotating = YES;
@@ -148,6 +170,13 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	/*
+	 check if the user has only clicked on a slice, meaning we have to rotate 
+	 the wheel to the slice index.
+	 Otherwise we need to see, which slice has been rotated to and thereby rotate to 
+	 that slice (just to position it accurately)
+	 */
+	
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:_rotatingView];
 	
@@ -189,6 +218,12 @@
 
 //UIView
 - (id)initWithFrame:(CGRect)frame {
+	/*
+	 init the picker object, the slices array,
+	 create the rotating view (wheel) to which the slices are added
+	 as subviews
+	 also add the overlay view
+	 */
     if (self = [super initWithFrame:frame]) {
         // Initialization code
 		//self.clearsContextBeforeDrawing = NO;
