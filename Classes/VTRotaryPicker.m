@@ -49,6 +49,7 @@
 	 reloads the data for the slices in the wheel
 	 repositions the slices and rotates them accordingly
 	 */
+  //subviews
 	for(UIView *subView in _rotatingView.subviews)
 		[subView removeFromSuperview];
 	[_sliceViews removeAllObjects];
