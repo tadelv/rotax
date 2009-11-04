@@ -251,6 +251,7 @@
 
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+  // reload the data
 	//CGContextRef context = UIGraphicsGetCurrentContext();
 	//[[UIColor whiteColor] set];
 	//CGContextFillEllipseInRect(context, rect);
