@@ -22,6 +22,7 @@
 	UIImageView *_backgroundView;
 	float diffAngle;
 	BOOL _rotating;
+  BOOL _rotate;
 	
 	NSMutableArray *_sliceViews;
 	int _currentSelectedSlice;

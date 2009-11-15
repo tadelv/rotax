@@ -112,6 +112,7 @@
 	
 	if(animated) {
 		[UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDelegate:self];
 		[UIView setAnimationDuration:0.6f];
 	}
 	_rotatingView.transform = CGAffineTransformMakeRotation(angle);
@@ -120,6 +121,10 @@
 		[UIView commitAnimations];
 	}
 	//[self updateSlices];
+}
+
+-(void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context{
+    _rotate = NO;
 }
 
 //Touches
@@ -131,6 +136,7 @@
 	 then we store the angle in a var, so that we can calculate the rotation later
 	 */
 	
+  if (_rotate)  return;
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:_rotatingView];
 	
@@ -159,6 +165,7 @@
 	
 	//	NSLog(@"touches");	
 	//calculate the angle and all
+  _rotate=NO;
 	_rotating = YES;
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:_rotatingView];
@@ -177,7 +184,9 @@
 	 Otherwise we need to see, which slice has been rotated to and thereby rotate to 
 	 that slice (just to position it accurately)
 	 */
-	
+  
+  if (_rotate)  return;	
+  _rotate = YES;
 	UITouch *touch = [touches anyObject];
 	CGPoint point = [touch locationInView:_rotatingView];
 	
