@@ -8,7 +8,7 @@
 
 #import "RotaryPickerAppDelegate.h"
 
-#define lolz [NSArray arrayWithObjects:@"ena",@"dva omaka",@"tri crpalka",@"stiri",@"5",@"6",@"7",@"8",nil]//,@"krompir",@"zelje",nil]
+#define lolz [NSArray arrayWithObjects:@"one",@"two",@"three",@"four",@"5",@"6",@"7",@"8",nil]//,@"krompir",@"zelje",nil]
 //#define lolz [NSArray arrayWithObjects:@"sir",@"pica",@"kaneloni",nil]
 @implementation RotaryPickerAppDelegate
 
@@ -18,7 +18,8 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
 	window.backgroundColor = [UIColor clearColor];
-	VTRotaryPicker *picker = [[VTRotaryPicker alloc] initWithFrame:CGRectMake(0, 20, 320, 320)];
+	VTRotaryPicker *picker = [[VTRotaryPicker alloc] initWithFrame:CGRectMake(0, 480-320, 320, 320)];
+	picker.transform = CGAffineTransformMakeRotation(-M_PI/2);
 	picker.dataSource = self;
 	[window addSubview:picker];
 	[picker release];
