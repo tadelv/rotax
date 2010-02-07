@@ -1,15 +1,28 @@
-The GOAL:
-=========
+#The GOAL:
+
 
 Create a rotary picker that will have function similar to Apple's own UIPicker with the difference of being open-source and looking good. 
 
-The Source of inspiration:
-==========================
-[![](http://tapbots.com/images/blog/making-of-convertbot/05.jpg)]
-(http://tapbots.com/images/blog/making-of-convertbot/05.jpg)
-[![](http://www.maclife.com/files/u36/0925_WhereTo_320.jpg)]
-(http://www.maclife.com/files/u36/0925_WhereTo_320.jpg)
+#The Source of inspiration:
 
-The path:
-=========
+[Convertbot](http://tapbots.com/software/convertbot/#overview)
+
+![](http://tapbots.com/img/software/convertbot/hero_screenshot.jpg)
+
+
+[WhereTo](http://www.futuretap.com/home/whereto-en/)
+
+![](http://www.maclife.com/files/u36/0925_WhereTo_320.jpg)
+
+#The path:
+
 Still thinking out the design and implementation parts, check out later to see if any progress has been made ;)
+
+#How it looks like at the moment:
+
+The interface designed by [T3y4](http://twitter.com/T3y4)
+
+![](http://twitpic.com/show/thumb/11v58a)
+
+Check the twitpic [here](http://twitpic.com/11v58a)
+
