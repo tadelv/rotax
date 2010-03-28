@@ -115,6 +115,9 @@
     [UIView setAnimationDelegate:self];
 		[UIView setAnimationDuration:0.6f];
 	}
+	if ([self.delegate respondsToSelector:@selector(rotaryPicker:willSelectSlice:)]) {
+		[self.delegate rotaryPicker:self willSelectSlice:_currentSelectedSlice];
+	}
 	_rotatingView.transform = CGAffineTransformMakeRotation(angle);
 	
 	if(animated) {
@@ -125,6 +128,9 @@
 
 -(void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context{
     _rotate = NO;
+	if ([self.delegate respondsToSelector:@selector(rotaryPicker:didSelectSlice:)]) {
+		[self.delegate rotaryPicker:self didSelectSlice:_currentSelectedSlice];
+	}
 }
 
 //Touches
@@ -289,7 +295,7 @@
 		textLabel.backgroundColor = [UIColor clearColor];
 		textLabel.textColor = [UIColor blackColor];
 		textLabel.font = [UIFont boldSystemFontOfSize:17.0];
-		textLabel.textAlignment = UITextAlignmentRight;
+		textLabel.textAlignment = UITextAlignmentCenter;
 		textLabel.numberOfLines = 0;
 		[self addSubview:textLabel];
 		[textLabel release];
